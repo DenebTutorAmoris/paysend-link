@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="sr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Uplata preko Paysend / Payment via Paysend</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; line-height:1.5; background:#f3f4f6; display:flex; justify-content:center; padding:2rem; }
+    .card { background:#fff; max-width:720px; width:100%; padding:28px; border-radius:16px; border:1px solid #e5e7eb; box-shadow:0 8px 30px rgba(2,6,23,0.1); text-align:center; }
+    h2 { margin-bottom:0.5rem; }
+    p.lead { color:#374151; margin-bottom:1rem; }
+    .btn { display:inline-block; background:#2563eb; color:#fff; text-decoration:none; padding:14px 22px; border-radius:12px; font-weight:700; margin:1rem 0; }
+    .small { color:#6b7280; font-size:13px; margin-top:0.5rem; }
+    .note { margin-top:1rem; padding:12px; border-radius:10px; background:#f9fafb; color:#6b7280; font-size:13px; }
+    .lang-toggle { margin-bottom:1rem; cursor:pointer; padding:6px 12px; border:1px solid #2563eb; border-radius:8px; background:#2563eb; color:#fff; display:inline-block; }
+
+    /* Dvojezični tekst */
+    .lang-sr { display:inline; }
+    .lang-en { display:none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="lang-toggle" onclick="toggleLanguage()">Switch Language / Promeni jezik</div>
+
+    <h2>
+      <span class="lang-sr">Uplata preko Paysend</span>
+      <span class="lang-en">Payment via Paysend</span>
+    </h2>
+
+    <p class="lead">
+      <span class="lang-sr">Brzo i sigurno — zatražite podatke za uplatu putem e-maila. Nakon što pošaljete zahtev, poslaću vam tačne podatke (ime i broj kartice) privatno.</span>
+      <span class="lang-en">Fast and secure — request payment details via email. Once you send your request, I will provide you with the exact details (name and card number) privately.</span>
+    </p>
+
+    <a class="btn" href="mailto:DENEBTUTORAMORIS@GMAIL.COM?subject=Paysend%20payment%20details%20Zahtev%20za%20podatke%20za%20uplatu%20preko%20Paysend">
+      <span class="lang-sr">📩 Zatraži podatke za uplatu</span>
+      <span class="lang-en">📩 Request payment details</span>
+    </a>
+
+    <div class="small">
+      <span class="lang-sr">Klikom na dugme otvara se vaš e-mail klijent. U mailu napišite iznos i poruku (npr. "Uplata za Ime_Prezime").</span>
+      <span class="lang-en">By clicking the button, your email client will open. In the email, please include the amount and a message (e.g., "Payment for First_Last").</span>
+    </div>
+
+    <div class="note">
+      <span class="lang-sr">Napomena: Nemojte objavljivati javno broj kartice. Podatke šaljem isključivo privatno nakon potvrde uplate ili dogovora.</span>
+      <span class="lang-en">Note: Do not publish card number publicly. I will send the details privately only after the payment is confirmed or by prior agreement.</span>
+    </div>
+  </div>
+
+  <script>
+    let lang = 'sr';
+    function toggleLanguage() {
+      const sr = document.querySelectorAll('.lang-sr');
+      const en = document.querySelectorAll('.lang-en');
+      if(lang === 'sr'){
+        sr.forEach(el => el.style.display = 'none');
+        en.forEach(el => el.style.display = 'inline');
+        lang = 'en';
+      } else {
+        sr.forEach(el => el.style.display = 'inline');
+        en.forEach(el => el.style.display = 'none');
+        lang = 'sr';
+      }
+    }
+  </script>
+</body>
+</html>
