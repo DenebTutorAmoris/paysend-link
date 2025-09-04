@@ -13,8 +13,8 @@
   .small { color:#111; font-size:18px; font-weight:bold; margin-top:1rem; text-align:left; }
   .note { margin-top:1rem; padding:12px; border-radius:10px; background:#f9fafb; color:#6b7280; font-size:13px; }
   .lang-toggle { margin-bottom:1rem; cursor:pointer; padding:6px 12px; border:1px solid #2563eb; border-radius:8px; background:#2563eb; color:#fff; display:inline-block; }
-  .lang-en { display:inline; }
-  .lang-sr { display:none; }
+  .lang-en { display:none; }
+  .lang-sr { display:inline; }
   .blue { color:#2563eb; }
   .red { color:#dc2626; }
   .green { color:#16a34a; }
@@ -42,7 +42,7 @@
     </span>
     <span class="lang-sr">
       📩 KLIKNI OVDE Unesite podatke i dobićete <span class="red">BESPLATNO</span> odgovor na Vaš zahtev<br>
-      / Zatražite podatke za donaciju
+      / Zatrazite podatke za donaciju
     </span>
   </a>
 
@@ -54,7 +54,16 @@
 
 <script>
   // Promenljiva koja prati trenutni jezik
+  // Početno stanje je srpski
   let currentLanguage = 'sr';
+
+  // Pri učitavanju odmah prikazujemo srpsku verziju
+  function initializeLanguage() {
+    document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('.lang-sr').forEach(el => el.style.display = 'inline');
+    currentLanguage = 'sr';
+    updateAdditionalText();
+  }
 
   // Funkcija za prebacivanje jezika
   function toggleLanguage() {
@@ -103,7 +112,7 @@
       subject = encodeURIComponent('Zatraži podatke za uplatu');
       body = encodeURIComponent(
         "Deneb Tutor Amoris\n\n" +
-        "Molim Vas da upisete samo one informacije koje zelite, a da bih u skladu sa tim na najbolji način odgovorio na Vas zahtev i pitanja.\n\n" +
+        "Molim Vas da upisete samo one informacije koje zelite, a da bih u skladu sa tim na najbolji nacin odgovorio na Vas zahtev i pitanja.\n\n" +
         "**Datum rodjenja:** \n\n" +
         "**Vreme rodjenja:** \n\n" +
         "**Mesto/Drzava rodjenja:** \n\n" +
@@ -137,8 +146,8 @@
     window.location.href = mailto;
   }
 
-  // Inicijalno prikaz na srpskom
-  toggleLanguage();
+  // Inicijalno pokretanje sa srpskim
+  initializeLanguage();
 
 </script>
 </body>
