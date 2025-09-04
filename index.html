@@ -1,22 +1,23 @@
 <!doctype html>
-<html lang="en">
+<html lang="sr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Payment via Paysend / Uplata preko Paysend</title>
+  <title>Payment via Paysend / Uplata ONLINE ili UPLATNICOM</title>
   <style>
     body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; line-height:1.5; background:#f3f4f6; display:flex; justify-content:center; padding:2rem; }
     .card { background:#fff; max-width:720px; width:100%; padding:28px; border-radius:16px; border:1px solid #e5e7eb; box-shadow:0 8px 30px rgba(2,6,23,0.1); text-align:center; }
     h2 { margin-bottom:0.5rem; }
     p.lead { color:#374151; margin-bottom:1rem; }
     .btn { display:inline-block; background:#2563eb; color:#fff; text-decoration:none; padding:14px 22px; border-radius:12px; font-weight:700; margin:1rem 0; }
-    .small { color:#6b7280; font-size:13px; margin-top:0.5rem; }
+    .small { color:#111; font-size:18px; font-weight:bold; margin-top:1rem; text-align:left; }
     .note { margin-top:1rem; padding:12px; border-radius:10px; background:#f9fafb; color:#6b7280; font-size:13px; }
     .lang-toggle { margin-bottom:1rem; cursor:pointer; padding:6px 12px; border:1px solid #2563eb; border-radius:8px; background:#2563eb; color:#fff; display:inline-block; }
-
-    /* Default language visibility */
     .lang-en { display:inline; }
     .lang-sr { display:none; }
+    .blue { color:#2563eb; }
+    .red { color:#dc2626; }
+    .green { color:#16a34a; }
   </style>
 </head>
 <body>
@@ -29,48 +30,88 @@
     </h2>
 
     <p class="lead">
-      <span class="lang-en">Fast and secure — request payment details via email. Once you send your request, I will provide you with the exact details (name and card number) privately.</span>
-      <span class="lang-sr">Brzo i sigurno — zatražite podatke za uplatu putem e-maila. Nakon što pošaljete zahtev, poslaću vam tačne podatke (ime i broj kartice) privatno.</span>
+      <span class="lang-en">Fast and secure — request payment details via email.</span>
+      <span class="lang-sr">Brzo i sigurno — zatražite podatke za uplatu putem e-maila.</span>
     </p>
 
-    <a class="btn" href="mailto:DENEBTUTORAMORIS@GMAIL.COM?subject=Paysend%20payment%20details%20Zahtev%20za%20podatke%20za%20uplatu%20preko%20Paysend">
-      <span class="lang-en">📩 Request payment details</span>
-      <span class="lang-sr">📩 Zatraži podatke za uplatu</span>
-    </a>
+   <!-- Dugme sa mailto linkom -->
+<a id="mailBtn" class="btn" href="#">
+  <span class="lang-en">
+    📩 Enter your details and get a <span class="red">FREE</span> answer to your request<br>
+    / Request donation details
+  </span>
+  <span class="lang-sr">
+    📩 Unesite podatke i dobićete <span class="red">BESPLATNO</span> odgovor na Vaš zahtev<br>
+    / Zatražite podatke za donaciju
+  </span>
+</a>
 
+    <!-- Tekst ispod dugmeta -->
     <div class="small">
-      <span class="lang-en">By clicking the button, your email client will open. In the email, please include the payment amount (e.g., 10 EUR) and a message (for example, you can write in the email:1) gender and date/time of birth, city, country; if you would like an astrological or numerological analysis 2) gender/date of birth and, for example, a description of a dream you would like interpreted 3) gender/date of birth, and ask a question if you would like an answer through tarot...You can also send the above via Viber or WhatsApp </span>
-      <span class="lang-sr">Klikom na dugme otvara se vaš e-mail klijent. U mailu napišite iznos uplate (npr. 10 EUR, za dinarske uplate dostavljamo primer uplatnice tj. QR kod za ONLINE bankarsko plaćanje). U okviru mejla možete napisati i poruku: 1) pol i datum/vreme rođenja, grad, državu; ukoliko želite astrološku ili numerološku analizu 2) pol/datum rođenja i npr. opis sna čije tumačenje želite 3. pol/datum rođenja, postavite pitanje; ako želite odgovor kroz tarot... Navedeno možete poslati i na Viber broj ili WhatsApp </span>
-    </div>
+      <span class="lang-en">
+        In your message, <span class="blue">WRITE</span> your basic information and you will receive an analysis and answers to your questions either <span class="red">FREE OF CHARGE</span> or with <span class="green">YOUR DONATION</span>.<br><br>
+        Please include:<br>
+        1) Gender and date/time of birth, city, country – if you would like an astrological or numerological analysis<br>
+        2) Gender/date of birth and, for example, a description of a dream you would like interpreted<br>
+        3) Gender/date of birth, and your question – if you would like an answer through tarot<br><br>
+        You can also send the above information via Viber or WhatsApp.
+      </span>
 
-    <div class="note">
-      <span class="lang-en">Note: Do not publish card number publicly. I will send the details privately only after the payment is confirmed or by prior agreement.</span>
-      <span class="lang-sr">Napomena: Nemojte objavljivati javno broj kartice. Podatke šaljem isključivo privatno nakon potvrde uplate ili dogovora.</span>
+      <span class="lang-sr">
+        U okviru poruke <span class="blue">UPIŠITE</span> osnovne podatke, dobićete <span class="red">BESPLATNO</span> ili uz <span class="green">VAŠU DONACIJU</span> analizu i odgovor na Vaša pitanja.<br><br>
+        UPIŠITE:<br>
+        1) pol i datum/vreme rođenja, grad, državu – ukoliko želite astrološku ili numerološku analizu<br>
+        2) pol/datum rođenja i npr. opis sna čije tumačenje želite<br>
+        3) pol/datum rođenja, postavite pitanje – ako želite odgovor kroz tarot<br><br>
+        Navedeno možete poslati i na Viber broj ili WhatsApp.
+      </span>
     </div>
   </div>
 
   <script>
-    let lang = 'en';
+    // Postavljanje jezika na srpski odmah pri učitavanju
+    let lang = 'sr';
+
+    // Sakrij engleski sadržaj i prikaži srpski
+    document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('.lang-sr').forEach(el => el.style.display = 'inline');
+
+    const btn = document.getElementById('mailBtn');
+
+    const bodySr = encodeURIComponent(
+      "Deneb Tutor Amoris\n\n" +
+      "Molim Vas da upišete samo one informacije koje želite, a da bih u skladu sa tim na najbolji način odgovorio na Vaš zahtev i pitanja.\n\n" +
+      "**Datum rođenja:** \n\n" +
+      "**Vreme rođenja:** \n\n" +
+      "**Mesto rođenja:** \n\n" +
+      "**Opis/Pitanje:** \n\n" +
+      "**Iznos donacije (npr. 10 EUR ili 1200 RSD):** \n\n" +
+      "**Valuta (EUR / USD / RSD):** \n\n" +
+      "**Telefon / Viber / WhatsApp:** \n\n\n" +
+      "—\n" +
+      "_Hvala,_\n" +
+      "Deneb Tutor Amoris"
+    );
+
+    // Postavljanje početnog mailto linka na srpski
+    btn.href = `mailto:DENEBTUTORAMORIS@GMAIL.COM?subject=Zatraži%20podatke%20za%20uplatu&body=${bodySr}`;
+
     function toggleLanguage() {
       const sr = document.querySelectorAll('.lang-sr');
       const en = document.querySelectorAll('.lang-en');
-      if(lang === 'en'){
+      if (lang === 'en') {
         en.forEach(el => el.style.display = 'none');
         sr.forEach(el => el.style.display = 'inline');
         lang = 'sr';
+        btn.href = `mailto:DENEBTUTORAMORIS@GMAIL.COM?subject=Zatraži%20podatke%20za%20uplatu&body=${bodySr}`;
       } else {
         en.forEach(el => el.style.display = 'inline');
         sr.forEach(el => el.style.display = 'none');
         lang = 'en';
+        // Ako želiš, možeš dodati i opciju za prebacivanje nazad na engleski
+        // ili ostaviti da je stranica uvek na srpskom
       }
     }
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
