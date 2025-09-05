@@ -18,6 +18,7 @@
   .blue { color:#2563eb; }
   .red { color:#dc2626; }
   .green { color:#16a34a; }
+  .orange { color:#f97316; }
 </style>
 </head>
 <body>
@@ -37,27 +38,22 @@
   <!-- Dugme za slanje maila -->
   <a class="btn" href="#" onclick="generateMail(); return false;">
     <span class="lang-en">
-      📩 CLICK HERE Enter your details and get a <span class="red">FREE</span> answer to your request<br>
+      📩 CLICK HERE Enter your details and get a <span class="orange">FREE</span> answer to your request<br>
       / Request donation details
     </span>
     <span class="lang-sr">
-      📩 KLIKNI OVDE Unesite podatke i dobićete <span class="red">BESPLATNO</span> odgovor na Vaš zahtev<br>
+      📩 KLIKNI OVDE Unesite podatke i dobićete <span class="orange">BESPLATNO</span> odgovor na Vaš zahtev<br>
       / Zatražite podatke za donaciju
     </span>
   </a>
 
   <!-- Tekst ispod dugmeta -->
-  <div class="small" id="additionalText">
-    <!-- Tekst će se dinamički prikazivati u zavisnosti od jezika -->
-  </div>
+  <div class="small" id="additionalText"></div>
 </div>
 
 <script>
-  // Promenljiva koja prati trenutni jezik
-  // Početno stanje je srpski
   let currentLanguage = 'sr';
 
-  // Pri učitavanju odmah prikazujemo srpsku verziju
   function initializeLanguage() {
     document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'none');
     document.querySelectorAll('.lang-sr').forEach(el => el.style.display = 'inline');
@@ -65,15 +61,12 @@
     updateAdditionalText();
   }
 
-  // Funkcija za prebacivanje jezika
   function toggleLanguage() {
     if (currentLanguage === 'sr') {
-      // Prebaciti na engleski
       document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'inline');
       document.querySelectorAll('.lang-sr').forEach(el => el.style.display = 'none');
       currentLanguage = 'en';
     } else {
-      // Prebaciti na srpski
       document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'none');
       document.querySelectorAll('.lang-sr').forEach(el => el.style.display = 'inline');
       currentLanguage = 'sr';
@@ -81,31 +74,29 @@
     updateAdditionalText();
   }
 
-  // Ažuriraj tekst ispod na osnovu jezika
   function updateAdditionalText() {
     const textDiv = document.getElementById('additionalText');
     if (currentLanguage === 'sr') {
       textDiv.innerHTML = `
         U okviru poruke <span class="blue">UPIŠITE</span> osnovne podatke, dobićete <span class="red">BESPLATNO</span> ili uz <span class="green">VAŠU DONACIJU</span> analizu i odgovor na Vaša pitanja.<br><br>
         UPIŠITE:<br>
-        1) pol i datum/vreme rođenja, grad, državu – ukoliko želite astrološku ili numerološku analizu<br>
-        2) pol/datum rođenja i npr. opis sna ukoliko ste zainteresovani za tumačenje i analizu snova <br>
-        3) pol/datum rođenja, postavite pitanje – ako želite odgovor kroz tarot<br><br>
-        Navedeno možete poslati i na Viber broj ili WhatsApp.
+        1) pol i datum/vreme rođenja, grad, državu – ukoliko želite <span class="green">ASTROLOŠKU</span> ili <span class="orange">NUMEROLOŠKU</span> analizu<br>
+        2) pol/datum rođenja i npr. opis sna ukoliko ste zainteresovani za tumačenje i <span class="blue">ANALIZU SNOVA</span><br>
+        3) pol/datum rođenja, postavite pitanje – ako želite odgovor kroz <span class="red">TAROT</span><br><br>
+        Navedeno možete poslati i na <span class="blue">Viber</span> broj ili <span class="green">WhatsApp</span> <span class="blue">+381 64 596 08 07</span>
       `;
     } else {
       textDiv.innerHTML = `
         In your message, <span class="blue">WRITE</span> your basic information and you will receive an analysis and answers to your questions either <span class="red">FREE OF CHARGE</span> or with <span class="green">YOUR DONATION</span>.<br><br>
         Please include:<br>
-        1) Gender and date/time of birth, city, country – if you would like an astrological or numerological analysis<br>
-        2) Gender/date of birth and, for example, a description of a dream you would like interpreted<br>
-        3) Gender/date of birth, and your question – if you would like an answer through tarot<br><br>
-        You can also send the above information via Viber or WhatsApp.
+        1) Gender and date/time of birth, city, country – if you would like an <span class="green">ASTROLOGICAL</span> or <span class="orange">NUMEROLOGICAL</span> analysis<br>
+        2) Gender/date of birth and, for example, a description of a <span class="blue">DREAM YOU WOULD LIKE INTERPRETED</span><br>
+        3) Gender/date of birth, and your question – if you would like an answer through <span class="red">TAROT</span><br><br>
+        You can also send the above information via <span class="blue">Viber</span> or <span class="green">WhatsApp</span> <span class="blue">+381 64 596 08 07</span>
       `;
     }
   }
 
-  // Funkcija za generisanje maila i otvaranje
   function generateMail() {
     let subject, body;
     if (currentLanguage === 'sr') {
@@ -117,8 +108,8 @@
         "**Vreme rodjenja:** \n\n" +
         "**Mesto/Drzava rodjenja:** \n\n" +
         "**Opis/Pitanje:** \n\n" +
-        "**Iznos donacije (npr. 10 EUR ili 1200 RSD):** \n\n" +
-        "**Valuta (EUR / USD / RSD):** \n\n" +
+        "**Iznos donacije (npr. 10 1200 RSD):** \n\n" +
+        "**Valuta (EUR / USD Molim Vas da ukoliko donirate u Eurima EUR, dolarima ili drugoj nedinarskoj valuti to naznačite ovde i poslaću Vam instrukciju za plaćanje ):** \n\n" +
         "**Telefon / Viber / WhatsApp:** \n\n\n" +
         "—\n" +
         "_Hvala,_\n" +
@@ -128,29 +119,24 @@
       subject = encodeURIComponent('Request Donation Details');
       body = encodeURIComponent(
         "Deneb Tutor Amoris\n\n" +
-        "Please write only the information you wish, and I will respond to your request and questions accordingly.\n\n" +
+        "Please provide only the information you wish to share, so that I can respond to your request and questions in the best possible way.\n\n" +
         "**Date of Birth:** \n\n" +
         "**Time of Birth:** \n\n" +
         "**Place/Country of Birth:** \n\n" +
         "**Description/Question:** \n\n" +
-        "**Donation Amount (e.g., 10 EUR or 1200 RSD):** \n\n" +
-        "**Currency (EUR / USD / RSD):** \n\n" +
+        "**Donation Amount (e.g., 10 EUR ):** \n\n" +
+        "**Currency (EUR / USD / If you are donating in Euros (EUR), US dollars, or any other non-dinar currency, please indicate it here and I will send you the payment instructions.):** \n\n" +
         "**Phone / Viber / WhatsApp:** \n\n\n" +
         "—\n" +
         "_Thank you,_\n" +
         "Deneb Tutor Amoris"
       );
     }
-
     const mailto = `mailto:DENEBTUTORAMORIS@GMAIL.COM?subject=${subject}&body=${body}`;
     window.location.href = mailto;
   }
 
-  // Inicijalno pokretanje sa srpskim
   initializeLanguage();
-
 </script>
 </body>
 </html>
-
-
