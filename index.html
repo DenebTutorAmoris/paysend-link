@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Payment via Paysend / Uplata ONLINE ili UPLATNICOM</title>
+<title>Donation payment via Paysend / Uplata ONLINE ili UPLATNICOM</title>
 <style>
   body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; line-height:1.5; background:#f3f4f6; display:flex; justify-content:center; padding:2rem; }
   .card { background:#fff; max-width:720px; width:100%; padding:28px; border-radius:16px; border:1px solid #e5e7eb; box-shadow:0 8px 30px rgba(2,6,23,0.1); text-align:center; }
@@ -19,30 +19,64 @@
   .red { color:#dc2626; }
   .green { color:#16a34a; }
   .orange { color:#f97316; }
+  .highlight { font-size:24px; font-weight:900; text-shadow:1px 1px 2px rgba(0,0,0,0.1); }
+  a.phone-link { text-decoration:none; }
 </style>
 </head>
 <body>
 <div class="card">
   <div class="lang-toggle" onclick="toggleLanguage()">Switch Language / Promeni jezik</div>
 
+  <!-- Dodati šareni tekst iznad naslova -->
+  <div class="intro-text" style="margin-bottom:1rem; font-size:20px; font-weight:bold;">
+    <span class="lang-sr">
+      <span class="red highlight">BESPLATNO</span> • 
+      <span class="blue">TUMAČENJE SNOVA</span> • 
+      <span class="orange">NUMEROLOGIJA</span> • 
+      <span class="red">TAROT</span> • 
+      <span class="green">ASTROLOGIJA</span>
+    </span>
+    <span class="lang-en">
+      <span class="red highlight">FREE</span> • 
+      <span class="blue">DREAM INTERPRETATION</span> • 
+      <span class="orange">NUMEROLOGY</span> • 
+      <span class="red">TAROT</span> • 
+      <span class="green">ASTROLOGY</span>
+    </span>
+  </div>
+
+  <!-- Novi red sa informacijom o porukama i glasovnim porukama -->
+  <div class="contact-info" style="margin-bottom:1rem; font-size:16px; font-weight:bold;">
+    <span class="lang-sr">
+      Poruke i glasovne poruke putem 
+      <a class="phone-link blue" href="viber://chat?number=%2B381645960807">Viber +381 64 596 08 07</a> i 
+      <a class="phone-link green" href="https://wa.me/381645960807">WhatsApp +381 64 596 08 07</a>
+    </span>
+    <span class="lang-en">
+      Messages and voice messages via 
+      <a class="phone-link blue" href="viber://chat?number=%2B381645960807">Viber +381 64 596 08 07</a> and 
+      <a class="phone-link green" href="https://wa.me/381645960807">WhatsApp +381 64 596 08 07</a>
+    </span>
+  </div>
+
   <h2>
-    <span class="lang-en">Payment via Paysend</span>
-    <span class="lang-sr">Uplata preko Paysend</span>
+    <span class="lang-en">Donation payment via Paysend</span>
+    <span class="lang-sr">Uplata donacije preko Paysend</span>
   </h2>
 
   <p class="lead">
-    <span class="lang-en">Fast and secure — request payment details via email.</span>
-    <span class="lang-sr">Brzo i sigurno — zatražite podatke za uplatu putem e-maila.</span>
+    <span class="lang-en">Fast and secure — request donation details via email.</span>
+    <span class="lang-sr">Brzo i sigurno — zatražite podatke za uplatu donacije putem e-maila.</span>
   </p>
 
   <!-- Dugme za slanje maila -->
   <a class="btn" href="#" onclick="generateMail(); return false;">
     <span class="lang-en">
-      📩 CLICK HERE Enter your details and get a <span class="orange">FREE</span> answer to your request<br>
+      📩 CLICK HERE Enter your details in <span class="orange highlight">MAIL</span> and get a <span class="orange highlight">FREE</span> answer to your request<br>
       / Request donation details
     </span>
     <span class="lang-sr">
-      📩 KLIKNI OVDE Unesite podatke i dobićete <span class="orange">BESPLATNO</span> odgovor na Vaš zahtev<br>
+      📩 KLIKNI OVDE Unesite podatke u <span class="orange highlight">E-MAIL</span> i dobićete <span class="orange highlight">BESPLATNO</span> odgovor na Vaš zahtev<br>
       / Zatražite podatke za donaciju
     </span>
   </a>
@@ -78,21 +112,25 @@
     const textDiv = document.getElementById('additionalText');
     if (currentLanguage === 'sr') {
       textDiv.innerHTML = `
-        U okviru poruke <span class="blue">UPIŠITE</span> osnovne podatke, dobićete <span class="red">BESPLATNO</span> ili uz <span class="green">VAŠU DONACIJU</span> analizu i odgovor na Vaša pitanja.<br><br>
+        U okviru poruke <span class="blue">UPIŠITE</span> osnovne podatke, dobićete <span class="red highlight">BESPLATNO</span> ili uz <span class="green">VAŠU DONACIJU</span> analizu i odgovor na Vaša pitanja.<br><br>
         UPIŠITE:<br>
         1) pol i datum/vreme rođenja, grad, državu – ukoliko želite <span class="green">ASTROLOŠKU</span> ili <span class="orange">NUMEROLOŠKU</span> analizu<br>
         2) pol/datum rođenja i npr. opis sna ukoliko ste zainteresovani za tumačenje i <span class="blue">ANALIZU SNOVA</span><br>
         3) pol/datum rođenja, postavite pitanje – ako želite odgovor kroz <span class="red">TAROT</span><br><br>
-        Navedeno možete poslati i na <span class="blue">Viber</span> broj ili <span class="green">WhatsApp</span> <span class="blue">+381 64 596 08 07</span>
+        Navedeno možete poslati i na 
+        <a class="phone-link blue" href="viber://chat?number=%2B381645960807">Viber +381 64 596 08 07</a> ili 
+        <a class="phone-link green" href="https://wa.me/381645960807">WhatsApp +381 64 596 08 07</a>
       `;
     } else {
       textDiv.innerHTML = `
-        In your message, <span class="blue">WRITE</span> your basic information and you will receive an analysis and answers to your questions either <span class="red">FREE OF CHARGE</span> or with <span class="green">YOUR DONATION</span>.<br><br>
+        In your message, <span class="blue">WRITE</span> your basic information and you will receive an analysis and answers to your questions either <span class="red highlight">FREE OF CHARGE</span> or with <span class="green">YOUR DONATION</span>.<br><br>
         Please include:<br>
         1) Gender and date/time of birth, city, country – if you would like an <span class="green">ASTROLOGICAL</span> or <span class="orange">NUMEROLOGICAL</span> analysis<br>
         2) Gender/date of birth and, for example, a description of a <span class="blue">DREAM YOU WOULD LIKE INTERPRETED</span><br>
         3) Gender/date of birth, and your question – if you would like an answer through <span class="red">TAROT</span><br><br>
-        You can also send the above information via <span class="blue">Viber</span> or <span class="green">WhatsApp</span> <span class="blue">+381 64 596 08 07</span>
+        You can also send the above information via 
+        <a class="phone-link blue" href="viber://chat?number=%2B381645960807">Viber +381 64 596 08 07</a> or 
+        <a class="phone-link green" href="https://wa.me/381645960807">WhatsApp +381 64 596 08 07</a>
       `;
     }
   }
@@ -100,7 +138,7 @@
   function generateMail() {
     let subject, body;
     if (currentLanguage === 'sr') {
-      subject = encodeURIComponent('Zatrazi podatke za uplatu');
+      subject = encodeURIComponent('Zatrazi podatke za uplatu donacije');
       body = encodeURIComponent(
         "Deneb Tutor Amoris\n\n" +
         "Molim Vas da upisete samo one informacije koje zelite, a da bih u skladu sa tim na najbolji nacin odgovorio na Vas zahtev i pitanja.\n\n" +
@@ -116,7 +154,7 @@
         "Deneb Tutor Amoris"
       );
     } else {
-      subject = encodeURIComponent('Request Donation Details');
+      subject = encodeURIComponent('Request Donation Payment Details');
       body = encodeURIComponent(
         "Deneb Tutor Amoris\n\n" +
         "Please provide only the information you wish to share, so that I can respond to your request and questions in the best possible way.\n\n" +
